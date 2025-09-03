@@ -40,8 +40,8 @@ const SearchBar = ({ onServiceSelect, services }) => {
           type="search"
           value={query}
           onChange={handleChange}
-          placeholder="Tell us the service you need?"
-          className="border rounded px-3 py-4 w-full"
+          placeholder="What service do you need?"
+          className="border bg-white text-black rounded-lg px-3 py-4 w-full"
         />
       </div>
       {filtered.length > 0 && (
