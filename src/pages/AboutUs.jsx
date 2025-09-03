@@ -15,7 +15,7 @@ useEffect(() => {
       <HeroProp
         image={aboutus_image}
         title="About Us"
-        description="Building digital solutions for a better future. Empowering SMEs, healthcare, and tech innovation across Nigeria. We create simple, impactful tools that solve real challenges and drive sustainable growth."
+        description="At Neticox Hub, we are more than just a service provider we are a creative powerhouse dedicated to helping businesses, NGOs, and individuals achieve their goals with innovation, strategy, and precision.  "
       />
 
       <div className="py-12 bg-white">

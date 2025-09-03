@@ -3,6 +3,10 @@ import Slider from "react-slick";
 
 import { Slide_1, Slide_2, Slide_3 } from "../assets";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import SearchBar from "./SearchBar";
+import ServiceBooking from "./ServiceBooking";
+import StepperForm from "./StepperForm";
+import { useState } from "react";
 
 // Slide data with richer content
 const slides = [
@@ -66,6 +70,8 @@ const Hero = () => {
     nextArrow: <NextArrow />,
   };
 
+  const [selectedService, setSelectedService] = useState(null);
+
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto">
@@ -85,14 +91,23 @@ const Hero = () => {
               {/* Overlay (gradient for better text contrast) */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
 
-              {/* Text content */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
+              {/* Text + Search section */}
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-20">
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
                   {slide.title}
                 </h2>
-                <p className="text-lg md:text-2xl max-w-xl drop-shadow-md">
+                <p className="text-lg md:text-2xl max-w-xl drop-shadow-md mb-6">
                   {slide.subtitle}
                 </p>
+
+                {/* Search section */}
+                <div className="w-full max-w-2xl px-6 text-left">
+                  {!selectedService ? (
+                    <ServiceBooking onServiceSelect={setSelectedService} />
+                  ) : (
+                    <StepperForm selectedService={selectedService}  />
+                  )}
+                </div>
               </div>
             </div>
           ))}

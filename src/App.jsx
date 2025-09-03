@@ -4,6 +4,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import StartupLab from "./pages/StartupLab";
+import Consulting from "./pages/Consulting";
+import Training from "./pages/Training";
+import ServiceCircle from "./pages/ServiceCircle";
+import ServiceRequest from "./pages/ServiceRequest";
 
 // Lazy imports
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -56,6 +61,11 @@ const App = () => {
           <Route path="/community/elitepro" element={<ElitePro />} />
           <Route path="/community/foundersync" element={<FounderSync />} />
           <Route path="/community/talentnexus" element={<TalentNexus />} />
+          <Route path="/community/servicecirlce" element={<ServiceCircle/>} />
+          <Route path="/startuplab" element={<StartupLab />} />
+          <Route path="/consulting" element={<Consulting />} />
+          <Route path="/training" element={<Training />} />
+          <Route path="/service_request" element={<ServiceRequest/>}/>
         </Routes>
       </Suspense>
 

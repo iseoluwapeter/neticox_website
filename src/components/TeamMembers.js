@@ -27,8 +27,8 @@ export const teamMembers = [
   {
     id: 2,
     image: CTO_image,
-    name: "OYERINDE ISEOLUWA",
-    position: "CTO / SOFTWARE TEAM LEAD",
+    name: "PETER OYERINDE",
+    position: "CTO/SOFTWARE LEAD",
     alt: "CTO - OYERINDE ISEOLUWA",
     href: "https://www.linkedin.com/in/iseoluwa-oyerinde",
     profile: `Oyerinde Peter Iseoluwa is a passionate Fullstack Engineer with over three years of experience building dynamic, user-focused digital solutions. He leads as a JavaScript Instructor and Frontend Team Lead at Anettcom Technologies while co-founding Uppercore Academy to train young tech talents. Combining creativity, leadership, and technical mastery, Peter delivers impactful innovations and inspires continuous growth in technology, empowering the next generation of developers.
@@ -38,7 +38,7 @@ export const teamMembers = [
     id: 3,
     image: Admin,
     name: "IBRAHIM SHUAIBU",
-    position: "ADMIN/ CONTENT LEAD",
+    position: "ADMIN/CONTENT LEAD",
     alt: "IBRAHIM SHUAIBU -ADMIN",
     href: "#",
     profile:
@@ -58,7 +58,7 @@ export const teamMembers = [
     id: 5,
     image: Media_Lead,
     name: "MACHAM GODWIN",
-    position: "MEDIA TEAM LEAD",
+    position: "MEDIA LEAD",
     alt: "Media_Team_led - Macham Godwin",
     href: "#",
     profile:
@@ -68,7 +68,7 @@ export const teamMembers = [
     id: 6,
     image: Media_Lead_II,
     name: "Emmanuel Igbinoghene",
-    position: "MEDIA TEAM LEAD II",
+    position: "MEDIA LEAD",
     alt: "edia_Team_led - Emmanuel Igbinoghene",
     href: "#",
     profile:
@@ -78,7 +78,7 @@ export const teamMembers = [
     id: 7,
     image: Product_Design,
     name: "RAYMOND GAUIS",
-    position: "PRODUCT DESIGN TEAM LEAD",
+    position: "PRODUCT DESIGN LEAD",
     alt: "RAYMOND GAUIS - PRODUCT DESIGN TEAM LEAD",
     href: "#",
     profile:
@@ -88,7 +88,7 @@ export const teamMembers = [
     id: 8,
     image: Proj_mgt,
     name: "UWANA LEGION",
-    position: "PROJECT MANAGEMENT TEAM LEAD",
+    position: "PROJECT MANAGEMENT LEAD",
     alt: "PROJECT MANAGEMENT - UWANA LEGION",
     href: "#",
     profile:
@@ -98,7 +98,7 @@ export const teamMembers = [
     id: 9,
     image: Graphics,
     name: "ABEL EMMANUEL",
-    position: "GRAPHIC TEAM LEAD - ABEL EMMANUEL",
+    position: "GRAPHIC LEAD",
     alt: "GRAPHIC TEAM LEAD - ABEL EMMANUEL",
     href: "#",
     profile:
@@ -108,7 +108,7 @@ export const teamMembers = [
     id: 10,
     image: Digital_mkt,
     name: "ABEL EMMANUEL",
-    position: "DIGITAL MARKETING TEAM LEAD ",
+    position: "DIGITAL MARKETING LEAD ",
     alt: "DIGITAL MARKETING TEAM LEAD - ABEL EMMANUEL",
     href: "#",
     profile:
@@ -118,7 +118,7 @@ export const teamMembers = [
     id: 11,
     image: Cybersecurity_II,
     name: "TEMITOPE OROJO",
-    position: "CYBER SECURITY TEAM LEAD II ",
+    position: "CYBER SECURITY LEAD",
     alt: "CYBER SECURITY TEAM LEAD - TEMITOPE OROJO",
     href: "#",
     profile:
@@ -128,7 +128,7 @@ export const teamMembers = [
     id: 12,
     image: COO,
     name: "CHIGOZIE NICHOLAS",
-    position: "C00",
+    position: "COO",
     alt: "C00 - CHIGOZIE NICHOLAS",
     href: "#",
     profile:

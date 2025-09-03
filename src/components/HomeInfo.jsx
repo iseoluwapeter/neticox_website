@@ -56,13 +56,13 @@ const HomeInfo = () => {
       <div className="px-10 md:px-20 flex flex-col lg:flex-row items-center justify-between gap-10 py-12">
         <div className="lg:w-1/2">
           <h2 className="text-2xl md:text-4xl font-bold leading-snug mb-6">
-            We don’t just work with you — we craft solutions that create{" "}
+            We don’t just work with you, we craft solutions that create{" "}
             <span className="text-green-600">lasting wealth</span> for our
             clients.
           </h2>
-          <button className="bg-green-600 hover:bg-green-700 text-white rounded-xl px-8 py-4 font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
+          {/* <button className="bg-green-600 hover:bg-green-700 text-white rounded-xl px-8 py-4 font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
             Get Started
-          </button>
+          </button> */}
         </div>
 
         {/* Illustration Image */}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa";
+import { RiMenu3Line } from "react-icons/ri";
 import { motion, AnimatePresence } from "framer-motion";
 import { Logo } from "../assets";
 
@@ -46,8 +47,8 @@ const navLinks = [
   {
     label: "Writing",
     dropdown: [
-      { label: "Business Plan", path: "/products/businessplan" },
-      { label: "Company Profile", path: "/products/company profile" },
+      { label: "Business Plan", path: "/products/" },
+      { label: "Company Profile", path: "/products/" },
       { label: "Biography", path: "/solutions/biography" },
       { label: "Copy Writing", path: "/solutions/copywriting" },
       { label: "Content Writing", path: "/solutions/contentwriting" },
@@ -62,29 +63,28 @@ const navLinks = [
       {
         label: "Community",
         subItems: [
-          { label: "NETICOX Tribe", path: "/solutions/graphics" },
+          { label: "NETICOX Tribe", path: "/solutions/" },
           { label: "Masterhand Network", path: "/community/masterhand" },
           { label: "SocialForce Network", path: "/community/socialforce" },
           { label: "ElitePro Network", path: "/community/elitepro" },
           { label: "FounderSync", path: "/community/foundersync" },
           { label: "Talent Nexus", path: "/community/talentnexus" },
-          { label: "Serve circle", path: "/solutions/videoediting" },
+          { label: "Serve circle", path: "/community/servicecirlce" },
         ],
       },
       {
         label: "Company",
         subItems: [
-          { label: "Team", path: "/solutions/team" },
-          { label: "Portfolio", path: "/solutions/portfolio" },
+          { label: "Portfolio", path: "/a" },
         ],
       },
-      { label: "Events", path: "/solutions/graphics" },
-      { label: "Blog/Article", path: "/solutions/graphics" },
-      { label: "Products", path: "/solutions/graphics" },
-      { label: "About", path: "/solutions/graphics" },
+      { label: "Events", path: "/a" },
+      { label: "Blog/Article", path: "/a" },
+      { label: "Products", path: "/a" },
+      { label: "About", path: "/a" },
     ],
   },
-  { label: "Startup Lab", path: "/startup" },
+  { label: "Startup Lab", path: "/startuplab" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -119,7 +119,7 @@ export default function Navbar() {
             {mobileOpen ? (
               <FaTimes className="h-6 w-6 text-gray-800" />
             ) : (
-              <FaBars className="h-6 w-6 text-gray-800" />
+              <RiMenu3Line className="h-6 w-6 text-gray-900" />
             )}
           </button>
         </div>

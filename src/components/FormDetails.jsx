@@ -48,6 +48,13 @@ export const contactDetails = [
     icon: <MdEmail size={30} />,
 
     title: "Email Address",
-    subtitle: "support@neticoxltd.com",
+    subtitle: "info@neticoxhub.com",
+  },
+  {
+    id: 4,
+    icon: <MdEmail size={30} />,
+
+    title: "Working Hours",
+    subtitle: "Monday – Friday | 9:00 AM – 6:00 PM (GMT+1)",
   },
 ];

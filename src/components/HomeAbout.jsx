@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HomeAbout = () => {
   return (
     <motion.section
-      className="px-6 md:px-20 py-16 bg-gradient-to-r from-[#f0fdf4] via-white to-[#ecfdf5] "
+      className="px-6 md:px-20 py-16 "
       initial={{ opacity: 0, y: -50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -35,9 +36,9 @@ const HomeAbout = () => {
         </p>
 
         {/* CTA */}
-        <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300">
+        <Link to="/contact" className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300">
           Know More About Us &rarr;
-        </button>
+        </Link>
       </div>
     </motion.section>
   );
