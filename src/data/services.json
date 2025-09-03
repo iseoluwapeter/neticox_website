@@ -1,37 +1,43 @@
 [
   {
     "id": 1,
-    "name": "Plumbing",
-    "description": "Installation and repair of pipes, faucets, and water systems.",
-    "categories": ["Home Services", "Repairs"],
-    "image": "/images/plumbing.jpg"
+    "name": "Web Development",
+    "description": "Website Development, design, management and marketing",
+    "categories": ["Technology", "Software", "Design"]
   },
   {
     "id": 2,
-    "name": "Electrical Installation",
-    "description": "Wiring, lighting, and power system installations.",
-    "categories": ["Home Services", "Electrical"],
-    "image": "/images/electrical.jpg"
+    "name": "Software Engineering",
+    "categories": ["Technology", "Software", "Development"]
   },
   {
     "id": 3,
-    "name": "Roof Repair",
-    "description": "Fixing leaks, replacing damaged shingles, and roof maintenance.",
-    "categories": ["Construction", "Repairs"],
-    "image": "/images/roof.jpg"
+    "name": "Product Design",
+    "categories": ["Technology", "Design", "Innovation"]
   },
   {
     "id": 4,
-    "name": "Painting",
-    "description": "Interior and exterior painting for residential and commercial spaces.",
-    "categories": ["Home Improvement", "Decor"],
-    "image": "/images/painting.jpg"
+    "name": "2D/3D Animation",
+    "categories": ["Technology", "Design", "Creative"]
   },
   {
     "id": 5,
-    "name": "Floor Tiling",
-    "description": "Tile installation for floors, walls, and outdoor areas.",
-    "categories": ["Home Improvement", "Construction"],
-    "image": "/images/tiling.jpg"
+    "name": "AI",
+    "categories": ["Technology", "Artificial Intelligence", "Innovation"]
+  },
+  {
+    "id": 6,
+    "name": "Cybersecurity",
+    "categories": ["Technology", "Security", "Software"]
+  },
+  {
+    "id": 7,
+    "name": "Data Analysis",
+    "categories": ["Technology", "Data", "Business Intelligence"]
+  },
+  {
+    "id": 8,
+    "name": "Business Proposal",
+    "categories": ["Business", "Writing", "Consulting"]
   }
 ]
