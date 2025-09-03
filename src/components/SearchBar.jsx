@@ -40,7 +40,7 @@ const SearchBar = ({ onServiceSelect, services }) => {
           type="search"
           value={query}
           onChange={handleChange}
-          placeholder="Tell us the service you need and we will get back to you shortly!"
+          placeholder="Tell us the service you need?"
           className="border rounded px-3 py-4 w-full"
         />
       </div>

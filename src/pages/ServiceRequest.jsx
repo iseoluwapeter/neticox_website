@@ -12,8 +12,8 @@ const ServiceRequest = () => {
     <div>
       <HeroProp
         image={aboutus_image}
-        title="Startup Lab – Where Ideas Take Flight"
-        description="The Neticox Hub Startup Lab is more than an incubator; it’s a global launchpad for innovators, entrepreneurs, and change-makers."
+        title="Make a service request"
+        description="We are at your service to offet you the best of service, just say the world"
       />
 
       <StepperForm selectedService={selectedService} />
