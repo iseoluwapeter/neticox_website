@@ -39,5 +39,40 @@
     "id": 8,
     "name": "Business Proposal",
     "categories": ["Business", "Writing", "Consulting"]
+  },
+  {
+    "id": 9,
+    "name": "Business Automation",
+    "categories": ["Business", "Technology", "Process Optimization"]
+  },
+  {
+    "id": 10,
+    "name": "Digital Marketing",
+    "categories": ["Business", "Marketing", "Online Presence"]
+  },
+  {
+    "id": 11,
+    "name": "Pitch Deck",
+    "categories": ["Business", "Presentation", "Startup"]
+  },
+  {
+    "id": 12,
+    "name": "Business Model",
+    "categories": ["Business", "Strategy", "Planning"]
+  },
+  {
+    "id": 13,
+    "name": "Brand Identity",
+    "categories": ["Business", "Design", "Marketing"]
+  },
+  {
+    "id": 14,
+    "name": "Training",
+    "categories": ["Education", "Skill Development", "Workshops"]
+  },
+  {
+    "id": 15,
+    "name": "Consulting",
+    "categories": ["Business", "Advisory", "Professional Services"]
   }
 ]

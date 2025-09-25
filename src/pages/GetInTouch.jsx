@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HeroProp from "../components/HeroProp";
 import { contactus_image } from "../assets";
 import { contactDetails, formInputs } from "../components/FormDetails";
@@ -6,11 +6,49 @@ import { FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { FiLinkedin } from "react-icons/fi";
 import { IoLogoFacebook } from "react-icons/io5";
 import { motion } from "framer-motion";
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = "https://hydrncixlahhlowdekkn.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5ZHJuY2l4bGFoaGxvd2Rla2tuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc2MDI4MTIsImV4cCI6MjA3MzE3ODgxMn0.Z3zUy3-SX2uMeo0HoldzyAEgSFjPAKRtBJszPKeMNKw";
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const GetInTouch = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phoneno: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { error } = await supabase.from("Contact").insert([formData]);
+
+    if (error) {
+      console.log("error inserting data", error.message);
+    } else {
+      alert("Message sent sucessfully");
+      setFormData({
+        name: "",
+        email: "",
+        phoneno: "",
+        subject: "",
+        message: "",
+      });
+    }
+  };
 
   return (
     <div>
@@ -42,21 +80,33 @@ const GetInTouch = () => {
           <h1 className="text-green-700 text-2xl lg:text-3xl text-center font-semibold">
             Get in Touch
           </h1>
-          {formInputs.map((input) => (
-            <input
-              key={input.id}
-              type={input.type}
-              placeholder={input.placeholder}
-              className="p-4 rounded-lg bg-gray-100 mt-5 w-full"
+          <form onSubmit={handleSubmit}>
+            {formInputs.map((input) => (
+              <input
+                key={input.id}
+                type={input.type}
+                name={input.name}
+                value={formData[input.name]}
+                onChange={handleChange}
+                placeholder={input.placeholder}
+                className="p-4 rounded-lg bg-gray-100 mt-5 w-full"
+                required
+              />
+            ))}
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Your Message"
+              className="bg-gray-100 w-full mt-4 h-40 rounded-lg p-3"
             />
-          ))}
-          <textarea
-            placeholder="Your Message"
-            className="bg-gray-100 w-full mt-4 h-40 rounded-lg p-3"
-          />
-          <button className="bg-gradient-to-r from-[#00ff9f] via-[#065f46] to-[#2e07f2] text-white rounded-lg px-8 py-4 mt-4 w-full">
-            Send Message
-          </button>
+            <button
+              className="bg-gradient-to-r from-[#00ff9f] via-[#065f46] to-[#2e07f2] text-white rounded-lg px-8 py-4 mt-4 w-full"
+              type="submit"
+            >
+              Send Message
+            </button>
+          </form>
         </motion.div>
 
         {/* Contact Info Section */}

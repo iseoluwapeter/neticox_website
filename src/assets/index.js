@@ -15,7 +15,7 @@ export { default as Graphics } from "../assets/Abel_Emmanuel.png";
 export { default as Digital_mkt } from "../assets/Emmanuel_Samson.png";
 export { default as Cybersecurity_II } from "../assets/Temitope_Orojo.png";
 export { default as Media_Lead_II } from "../assets/Emmanuel_Igbinoghene.png";
-export {default as Product_Design} from "../assets/Raymond_Gauis.png"
+export {default as Product_Design} from "../assets/Raymond_Gauis.jpg"
 export {default as Testimonial_1} from "../assets/testimonial_1.jpg"
 export {default as Testimonial_2} from "../assets/testimonial_2.jpg"
 export {default as Testimonial_3} from "../assets/testimonial_3.jpg"

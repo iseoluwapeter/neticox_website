@@ -9,6 +9,7 @@ import Consulting from "./pages/Consulting";
 import Training from "./pages/Training";
 import ServiceCircle from "./pages/ServiceCircle";
 import ServiceRequest from "./pages/ServiceRequest";
+import SolutionLab from "./pages/SolutionLab";
 
 // Lazy imports
 const HomePage = lazy(() => import("./pages/HomePage"));
@@ -61,11 +62,12 @@ const App = () => {
           <Route path="/community/elitepro" element={<ElitePro />} />
           <Route path="/community/foundersync" element={<FounderSync />} />
           <Route path="/community/talentnexus" element={<TalentNexus />} />
-          <Route path="/community/servicecirlce" element={<ServiceCircle/>} />
-          <Route path="/startuplab" element={<StartupLab />} />
+          <Route path="/community/servicecirlce" element={<ServiceCircle />} />
+          <Route path="/founderslab" element={<StartupLab />} />
           <Route path="/consulting" element={<Consulting />} />
           <Route path="/training" element={<Training />} />
-          <Route path="/service_request" element={<ServiceRequest/>}/>
+          <Route path="/service_request" element={<ServiceRequest />} />
+          <Route path="/solutionlab" element={<SolutionLab />} />
         </Routes>
       </Suspense>
 

@@ -42,7 +42,7 @@ const HomeServices = () => {
           Our <span className="text-green-600">Services</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          We deliver solutions that help you learn, grow, and succeed — whether
+          We deliver solutions that help you learn, grow, and succeed whether
           you need skills, strategy, events, or technical support.
         </p>
       </div>

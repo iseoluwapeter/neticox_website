@@ -67,7 +67,7 @@ export const teamMembers = [
   {
     id: 6,
     image: Media_Lead_II,
-    name: "Emmanuel Igbinoghene",
+    name: "EMMANUEL IGBINOGHENE",
     position: "MEDIA LEAD",
     alt: "edia_Team_led - Emmanuel Igbinoghene",
     href: "#",

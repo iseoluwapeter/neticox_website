@@ -11,6 +11,7 @@ const navLinks = [
   {
     label: "Solutions",
     dropdown: [
+      { label: "Solution Lab", path: "/solutionlab" },
       {
         label: "Tech Solutions",
         subItems: [
@@ -24,8 +25,8 @@ const navLinks = [
             label: "Business Automation",
             path: "/solutions/businessautomation",
           },
-          { label: "Data Analytics", path: "/solutions/dataanalytics" },
-          { label: "IT Support", path: "/solutions/itsupport" },
+          // { label: "Data Analytics", path: "/solutions/dataanalytics" },
+          // { label: "IT Support", path: "/solutions/itsupport" },
         ],
       },
       {
@@ -35,56 +36,53 @@ const navLinks = [
           { label: "Website Design", path: "/solutions/webdesign" },
           { label: "Digital Marketing", path: "/solutions/digitalmkt" },
           { label: "2D/3D Animation", path: "/solutions/animation" },
-          { label: "Motion Graphics", path: "/solutions/motiongraphics" },
+          // { label: "Motion Graphics", path: "/solutions/motiongraphics" },
           { label: "Product Design", path: "/solutions/productdesign" },
-          { label: "Video Editing", path: "/solutions/videoediting" },
+          // { label: "Video Editing", path: "/solutions/videoediting" },
         ],
       },
     ],
   },
   { label: "Training", path: "/training" },
   { label: "Consulting", path: "/consulting" },
-  {
-    label: "Writing",
-    dropdown: [
-      { label: "Business Plan", path: "/products/" },
-      { label: "Company Profile", path: "/products/" },
-      { label: "Biography", path: "/solutions/biography" },
-      { label: "Copy Writing", path: "/solutions/copywriting" },
-      { label: "Content Writing", path: "/solutions/contentwriting" },
-      { label: "Pitch Deck", path: "/solutions/pitchdeck" },
-      { label: "Business Proposal", path: "/solutions/businessproposal" },
-      { label: "Grant Proposal Writing", path: "/solutions/grant" },
-    ],
-  },
+  // {
+  //   label: "Writing",
+  //   dropdown: [
+  //     { label: "Business Plan", path: "/products/" },
+  //     { label: "Company Profile", path: "/products/" },
+  //     { label: "Biography", path: "/solutions/biography" },
+  //     { label: "Copy Writing", path: "/solutions/copywriting" },
+  //     { label: "Content Writing", path: "/solutions/contentwriting" },
+  //     { label: "Pitch Deck", path: "/solutions/pitchdeck" },
+  //     { label: "Business Proposal", path: "/solutions/businessproposal" },
+  //     { label: "Grant Proposal Writing", path: "/solutions/grant" },
+  //   ],
+  // },
   {
     label: "Resources",
     dropdown: [
       {
         label: "Community",
         subItems: [
-          { label: "NETICOX Tribe", path: "/solutions/" },
+          // { label: "NETICOX Tribe", path: "/solutions/" },
           { label: "Masterhand Network", path: "/community/masterhand" },
           { label: "SocialForce Network", path: "/community/socialforce" },
           { label: "ElitePro Network", path: "/community/elitepro" },
           { label: "FounderSync", path: "/community/foundersync" },
-          { label: "Talent Nexus", path: "/community/talentnexus" },
-          { label: "Serve circle", path: "/community/servicecirlce" },
+          { label: "TalentNexus", path: "/community/talentnexus" },
+          { label: "ServeCircle", path: "/community/servicecirlce" },
         ],
       },
-      {
-        label: "Company",
-        subItems: [
-          { label: "Portfolio", path: "/a" },
-        ],
-      },
-      { label: "Events", path: "/a" },
-      { label: "Blog/Article", path: "/a" },
-      { label: "Products", path: "/a" },
-      { label: "About", path: "/a" },
+      // {
+      //   label: "Company",
+      //   subItems: [{ label: "Portfolio", path: "/a" }],
+      // },
+      // { label: "Events", path: "/a" },
+      // { label: "Blog/Article", path: "/a" },
+      // { label: "Products", path: "/a" },
     ],
   },
-  { label: "Startup Lab", path: "/startuplab" },
+  { label: "StartupLab", path: "/founderslab" },
   { label: "Contact", path: "/contact" },
 ];
 
@@ -96,7 +94,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className=" mx-auto px-10 sm:px-6 lg:px-20 flex justify-between h-16 items-center">
-        <img src={Logo} alt="neticox_logo" style={{ width: "100px" }} />
+        <Link to="/">
+          <img src={Logo} alt="neticox_logo" style={{ width: "100px" }} />
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex space-x-6 items-center">

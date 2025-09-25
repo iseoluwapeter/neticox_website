@@ -45,7 +45,7 @@ const SearchBar = ({ onServiceSelect, services }) => {
         />
       </div>
       {filtered.length > 0 && (
-        <ul className="absolute bg-white text-black shadow rounded w-full mt-1 max-h-60 overflow-y-auto z-10">
+        <ul className="absolute bg-white text-black shadow-sm border h-[170px] rounded w-full mt-1 max-h-60 overflow-y-auto z-10">
           {filtered.map((service) => (
             <li
               key={service.id}

@@ -1,13 +1,16 @@
 import React from "react";
 import Slider from "react-slick";
 import HeroProp from "../components/HeroProp";
-import IncubationProp from "../components/IncubationProp";
 import CTAProp from "../components/CTAProp";
 import ConsultingAreaProp from "../components/ConsultingAreaProp";
 import { aboutus_image } from "../assets";
-import { FaLightbulb } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Consulting = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -26,7 +29,7 @@ const Consulting = () => {
       <HeroProp
         image={aboutus_image}
         title="Consulting Services"
-        description="At Neticox Hub, we go beyond training – we work side by side with you to design strategies, solve challenges, and unlock growth opportunities. Whether you’re running an NGO, managing a business, or building a personal brand, our consulting services are tailored to meet your unique needs."
+        description="At Neticox Hub, we go beyond training we work side by side with you to design strategies, solve challenges, and unlock growth opportunities. Whether you’re running an NGO, managing a business, or building a personal brand, our consulting services are tailored to meet your unique needs."
       />
 
       {/* Consulting Areas Slider */}

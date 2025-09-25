@@ -36,15 +36,15 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link to="/solutions" className="hover:text-white">
+              <Link to="/solutionlab" className="hover:text-white">
                 Solutions
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/products" className="hover:text-white">
                 Products
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/contact" className="hover:text-white">
                 Contact

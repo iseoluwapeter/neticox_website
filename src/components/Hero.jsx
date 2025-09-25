@@ -58,16 +58,16 @@ const NextArrow = ({ onClick }) => (
 
 const Hero = () => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     autoplay: true,
     speed: 700,
     autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
+    arrows: false,
+    // prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
   };
 
   const [selectedService, setSelectedService] = useState(null);
@@ -105,7 +105,7 @@ const Hero = () => {
                   {!selectedService ? (
                     <ServiceBooking onServiceSelect={setSelectedService} />
                   ) : (
-                    <StepperForm selectedService={selectedService}  />
+                    <StepperForm selectedService={selectedService} />
                   )}
                 </div>
               </div>

@@ -23,7 +23,8 @@ const OurTeam = () => {
               <img
                 src={member.image}
                 alt={member.alt}
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-in-out"
+                onClick={(e) => e.currentTarget.classList.toggle("grayscale-0")}
+                className="w-full h-full object-cover grayscale transition-all duration-500 ease-in-out"
               />
               <a
                 href={member.href}
@@ -35,7 +36,7 @@ const OurTeam = () => {
               </a>
             </div>
 
-            {/* ——— Flippable Footer ——— */}
+            {/* Flippable Footer */}
             <div className="perspective group h-[80px] relative">
               <div className="flip-card-inner">
                 {/* Front face */}
@@ -49,7 +50,7 @@ const OurTeam = () => {
                   <button
                     className="underline text-sm hover:text-gray-200 transition"
                     onClick={(e) => {
-                      e.stopPropagation(); // prevent bubbling
+                      e.stopPropagation();
                       toggleItem(member.id);
                     }}
                   >
@@ -62,7 +63,7 @@ const OurTeam = () => {
             {isOpen && (
               <div
                 className="bg-gray-100 text-gray-700 px-4 py-3 text-sm transition-all duration-300 ease-in-out cursor-pointer"
-                onClick={() => setOpenItemId(null)} // click anywhere to close
+                onClick={() => setOpenItemId(null)}
               >
                 <p className="font-semibold">{member.name}</p>
                 <p>{member.profile || "No profile details yet."}</p>

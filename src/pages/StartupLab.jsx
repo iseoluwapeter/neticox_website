@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import HeroProp from "../components/HeroProp";
 import { aboutus_image } from "../assets";
 import { FaGlobe, FaCheckCircle, FaLightbulb } from "react-icons/fa";
@@ -7,6 +8,9 @@ import IncubationProp from "../components/IncubationProp";
 import CTAProp from "../components/CTAProp";
 
 const StartupLab = () => {
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}

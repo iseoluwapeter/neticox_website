@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import Modal from "./Modal";
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = "https://hydrncixlahhlowdekkn.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5ZHJuY2l4bGFoaGxvd2Rla2tuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc2MDI4MTIsImV4cCI6MjA3MzE3ODgxMn0.Z3zUy3-SX2uMeo0HoldzyAEgSFjPAKRtBJszPKeMNKw";
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const StepperForm = ({ selectedService }) => {
   const [step, setStep] = useState(1);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     location: "",
     description: "",
@@ -14,22 +22,78 @@ const StepperForm = ({ selectedService }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", { service: selectedService, ...formData });
-    alert("Form submitted successfully!");
+  const validateStep = () => {
+    if (step === 1 && !formData.description.trim()) {
+      setError("Please describe your need before continuing.");
+      return false;
+    }
+    if (step === 2 && !formData.location.trim()) {
+      setError("Please enter your location before continuing.");
+      return false;
+    }
+    if (step === 3) {
+      if (!formData.name.trim()) {
+        setError("Please enter your name.");
+        return false;
+      }
+      if (!formData.phone.trim()) {
+        setError("Please enter your phone number.");
+        return false;
+      }
+      if (!formData.email.trim()) {
+        setError("Please enter your email.");
+        return false;
+      }
+    }
+    setError(""); // clear error if validation passes
+    return true;
+  };
+
+  const nextStep = () => {
+    if (validateStep()) setStep(step + 1);
+  };
+
+  const prevStep = () => {
+    setStep(step - 1);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateStep()) return;
+
+    const { error } = await supabase
+      .from("service_request")
+      .insert([{ ...formData, service: selectedService }]);
+
+    if (error) {
+      setError("Please, check again. Form failed to submit");
+      console.log(error.message)
+    } else {
+      setError("Form submitted successfully! 🎉");
+   
+      setFormData({
+        location: "",
+        description: "",
+        name: "",
+        phone: "",
+        email: "",
+      });
+      setStep(1);
+    }
   };
 
   const steps = ["Your Need", "Location", "Contact Info"];
 
   return (
     <div className="bg-gray-50 py-20 px-6">
-      <div className="max-w-lg  mx-auto bg-white p-6 rounded-2xl shadow-lg">
+      <div className="max-w-lg mx-auto bg-white p-6 rounded-2xl shadow-lg">
         {/* Header */}
         <h2 className="text-2xl font-bold text-center text-green-700 mb-6">
           Request: {selectedService}
         </h2>
 
-        {/* Step Progress */}
+        {/* Progress Bar */}
         <div className="flex items-center justify-between mb-8 relative">
           <div className="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 rounded"></div>
           <div
@@ -81,12 +145,10 @@ const StepperForm = ({ selectedService }) => {
               rows="4"
               className="border p-3 w-full rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none"
               placeholder="Tell us about your project..."
-              required
             ></textarea>
-
             <button
               className="mt-6 w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl transition-all"
-              onClick={() => setStep(2)}
+              onClick={nextStep}
             >
               Next →
             </button>
@@ -105,18 +167,17 @@ const StepperForm = ({ selectedService }) => {
               onChange={handleChange}
               className="border p-3 w-full rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none"
               placeholder="Where are you asking from?"
-              required
             />
             <div className="flex mt-6 justify-between">
               <button
                 className="bg-gray-500 hover:bg-gray-600 text-white px-5 py-2 rounded-xl transition-all"
-                onClick={() => setStep(1)}
+                onClick={prevStep}
               >
                 ← Back
               </button>
               <button
                 className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl transition-all"
-                onClick={() => setStep(3)}
+                onClick={nextStep}
               >
                 Next →
               </button>
@@ -137,13 +198,11 @@ const StepperForm = ({ selectedService }) => {
               onChange={handleChange}
               className="border p-3 w-full rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none mb-4"
               placeholder="Your Name"
-              required
             />
             <label className="block mb-2 font-medium text-gray-700">
               Phone
             </label>
             <input
-              required
               name="phone"
               value={formData.phone}
               onChange={handleChange}
@@ -159,12 +218,11 @@ const StepperForm = ({ selectedService }) => {
               onChange={handleChange}
               className="border p-3 w-full rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none mb-4"
               placeholder="Your Email"
-              required
             />
             <div className="flex mt-6 justify-between">
               <button
                 className="bg-gray-500 hover:bg-gray-600 text-white px-5 py-2 rounded-xl transition-all"
-                onClick={() => setStep(2)}
+                onClick={prevStep}
               >
                 ← Back
               </button>
@@ -172,12 +230,15 @@ const StepperForm = ({ selectedService }) => {
                 className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl transition-all"
                 onClick={handleSubmit}
               >
-                ✅ Submit
+                Submit
               </button>
             </div>
           </div>
         )}
       </div>
+
+      {/* 🔹 Error / Success Modal */}
+      <Modal message={error} onClose={() => setError("")} />
     </div>
   );
 };

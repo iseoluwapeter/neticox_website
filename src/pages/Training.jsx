@@ -1,13 +1,16 @@
 import React from "react";
 import Slider from "react-slick";
 import HeroProp from "../components/HeroProp";
-import IncubationProp from "../components/IncubationProp";
 import CTAProp from "../components/CTAProp";
 import ConsultingAreaProp from "../components/ConsultingAreaProp";
 import { aboutus_image } from "../assets";
-import { FaLightbulb } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Training = () => {
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, []);
+
   const settings = {
     dots: true,
     infinite: true,

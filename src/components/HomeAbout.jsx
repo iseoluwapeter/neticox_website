@@ -28,10 +28,10 @@ const HomeAbout = () => {
         {/* Expanded Story */}
         <p className="text-gray-600 mb-8 leading-relaxed">
           At our core, we believe every business has its unique DNA. That’s why
-          we go beyond templates — we craft bespoke digital strategies that
+          we go beyond templates we craft bespoke digital strategies that
           align with your goals, connect with your audience, and make your brand
           unforgettable. From web development to brand design, we combine
-          technology and art to position — or re-position — your business for
+          technology and art to position or re-position your business for
           success.
         </p>
 

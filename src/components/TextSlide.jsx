@@ -2,7 +2,7 @@
 import React from "react";
 import Slider from "react-slick";
 
-const TextSlide = ({ clients}) => {
+const TextSlide = ({ clients }) => {
   const settings = {
     className: "slider variable-width",
     dots: false,
@@ -23,7 +23,7 @@ const TextSlide = ({ clients}) => {
         <Slider {...settings}>
           {clients.map((client, index) => (
             <div className="" key={index}>
-              <h1 className="h-8 px-6 lg:text-[1.5rem] lg:px-24  font-bold text-[#fff]">
+              <h1 className="h-8 px-6 text-[1.8rem] lg:px-24  font-bold text-[#fff]">
                 {client}
               </h1>
             </div>

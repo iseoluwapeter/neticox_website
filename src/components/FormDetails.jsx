@@ -6,24 +6,28 @@ import React from "react";
 export const formInputs = [
   {
     id: 1,
+    name: "name",
     type: "text",
     placeholder: "Your Name",
     icon: <FaInstagram />,
   },
   {
     id: 2,
+    name: "email",
     type: "email",
     placeholder: "Email Address",
     icon: <MdEmail />,
   },
   {
     id: 3,
+    name: "phoneno",
     type: "phone",
     placeholder: "Phone No",
     icon: <FaPhoneAlt />,
   },
   {
     id: 4,
+    name: "subject",
     type: "text",
     placeholder: "Subject",
     icon: <FaInstagram />,
@@ -41,7 +45,7 @@ export const contactDetails = [
     id: 2,
     icon: <FaPhoneAlt size={30} />,
     title: "Phone Number",
-    subtitle: "+234 111 1111 1111",
+    subtitle: "+234 814 950 6283",
   },
   {
     id: 3,
