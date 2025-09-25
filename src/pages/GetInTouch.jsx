@@ -7,6 +7,7 @@ import { FiLinkedin } from "react-icons/fi";
 import { IoLogoFacebook } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { createClient } from "@supabase/supabase-js";
+import Modal from "../components/Modal";
 
 const supabaseUrl = "https://hydrncixlahhlowdekkn.supabase.co";
 const supabaseKey =
@@ -25,21 +26,26 @@ const GetInTouch = () => {
     subject: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setIsLoading(true);
+
     const { error } = await supabase.from("Contact").insert([formData]);
 
     if (error) {
+      setError("Please check again. Form failed submit");
       console.log("error inserting data", error.message);
     } else {
-      alert("Message sent sucessfully");
+      setError("Message sent sucessfully");
+      // alert("Message sent sucessfully");
       setFormData({
         name: "",
         email: "",
@@ -48,6 +54,8 @@ const GetInTouch = () => {
         message: "",
       });
     }
+
+    setIsLoading(false);
   };
 
   return (
@@ -101,10 +109,11 @@ const GetInTouch = () => {
               className="bg-gray-100 w-full mt-4 h-40 rounded-lg p-3"
             />
             <button
+              disabled={isLoading}
               className="bg-gradient-to-r from-[#00ff9f] via-[#065f46] to-[#2e07f2] text-white rounded-lg px-8 py-4 mt-4 w-full"
               type="submit"
             >
-              Send Message
+              {isLoading ? "Sending message..." : "Send Message"}
             </button>
           </form>
         </motion.div>
@@ -182,6 +191,8 @@ const GetInTouch = () => {
           </div>
         </div>
       </div>
+
+      <Modal message={error} onClose={() => setError("")} />
     </div>
   );
 };

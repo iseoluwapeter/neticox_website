@@ -10,6 +10,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const StepperForm = ({ selectedService }) => {
   const [step, setStep] = useState(1);
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     location: "",
     description: "",
@@ -62,16 +63,18 @@ const StepperForm = ({ selectedService }) => {
 
     if (!validateStep()) return;
 
+    setIsLoading(true);
+
     const { error } = await supabase
       .from("service_request")
       .insert([{ ...formData, service: selectedService }]);
 
     if (error) {
       setError("Please, check again. Form failed to submit");
-      console.log(error.message)
+      console.log(error.message);
     } else {
       setError("Form submitted successfully! 🎉");
-   
+
       setFormData({
         location: "",
         description: "",
@@ -81,6 +84,8 @@ const StepperForm = ({ selectedService }) => {
       });
       setStep(1);
     }
+
+    setIsLoading(false);
   };
 
   const steps = ["Your Need", "Location", "Contact Info"];
@@ -227,10 +232,11 @@ const StepperForm = ({ selectedService }) => {
                 ← Back
               </button>
               <button
-                className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl transition-all"
+                disabled={isLoading}
+                className={`bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl transition-all`}
                 onClick={handleSubmit}
               >
-                Submit
+                {isLoading ? "Submitting..." : "Submit"}
               </button>
             </div>
           </div>
