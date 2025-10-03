@@ -56,7 +56,7 @@ const Footer = () => {
         {/* Section 3: Contact / Social */}
         <div>
           <h3 className="text-lg font-semibold mb-3 text-white">Connect</h3>
-          <p className="text-sm mb-3">Email: support@neticoxhub.ng</p>
+          <p className="text-sm mb-3">Email: neticoxhub@gmail.com</p>
           <div className="flex space-x-4 text-xl">
             <a href="#" className="hover:text-white">
               <FaFacebookF />

@@ -52,7 +52,7 @@ export const contactDetails = [
     icon: <MdEmail size={30} />,
 
     title: "Email Address",
-    subtitle: "info@neticoxhub.com",
+    subtitle: "neticoxhub@gmail.com",
   },
   {
     id: 4,
